@@ -1,23 +1,708 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <script src="d3.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="css.css" />
-    </head>
-<body>
-<h1>Hello World</h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+		
+    <title>网络信息对旅游者决策的影响</title>
+    <link href="bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link href="jquery.mmenu.all.css" rel="stylesheet" />
+	<style type="text/css">
+body{background:#111302 url("abcd.jpg") top center no-repeat !important;background-size:100% auto !important}body .avatar .img-circle{background:#347433 !important}body form .btn{background:#347433 !important;border-color:#347433 !important}#header h1,#header p{background:none !important}
+    </style>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap.min.js"></script>
+    <script type="text/javascript" src="jquery.hammer.min.js"></script>
+    <script type="text/javascript" src="jquery.mmenu.min.all.js"></script>
+    <script src="wxm-core.js"></script> 
+</head>
+<body id="test1" class="test1">
+    <div id="content">
+        <div id="header_bar">
+        </div>
+        <!-- E header_bar -->
+	
+			
+        <div class="container">
+            <div id="header" class="text-center">
+                <div style="height: 65px;"></div>
+				
+				 <div class="container">
+        <div class="text-center header">
+            <h1 class="bold">
+                 网络信息对旅游者决策的影响</h1>
+            <p>
+				
+                <span style="padding:4px;background-color: #000;">非常感谢参与测试</span>
+            </div>
+            <!-- E header -->
+            <div id="bd" class="panel">
+                <div id="panel1" class="panel-body">
+                    <form action="#">
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            这是一份关于旅游决策与互联网环境的调查问卷，请您根据自己的实际情况作答，也期望本问卷能给您的出游带去一些启示。</dd>
+                    </dl>
+                    <div class="buttons">
+                        <a href="#result" class="btn btn-lg btn-success" style="width: 100%" onclick="return next(0);">
+                            <strong style="color:#fdfd88;">开始测试</strong></a>
+                    </div>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;"><img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl><dd>1. 您的性别是</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.男 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            B.女 </li>
+                       
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            2.您的年龄</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.14岁及以下 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.14-22岁</li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            C.23-40岁 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            D.40岁及以上 </li>
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            3.您的文化程度</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.初等教育（小学）水平 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            B.中等教育（初高中、职专、中技）水平 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            C.高等教育（专科、本科、硕士研究生和博士研究生）水平 </li>
+                        
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            4.您的职业
+                        </dd>
+                    </dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.国家机关、党群组织、企业、事业单位负责人</li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            B.专业技术人员 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            C.办事人员和有关人员 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            D.商业、服务业人员 </li>
+						 <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            E.农、林、牧、渔、水利业生产人员 </li>
+						 <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            F.生产、运输设备操作人员及有关人员 </li>
+						 <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            G.军人 </li>
+						 <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            H.其他从业人员 </li>		
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            5.您每月的可支配收入</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.1000及以下 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.1000-3000</li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            C.3000-5000 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            D.5000及以上 </li>
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            6.您这次旅游的组织方式
+                        </dd>
+                    </dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.自助游 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.跟团游  </li>
+                      
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            7.您这次旅游的目的地如何确定的
+                        </dd>
+                    </dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.亲朋好友推荐 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.媒体宣传 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            C.自我向往 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            D.商务出差 </li>
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            8.请问您在出游前，是否通过互联网了解过旅游相关情况</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            A.通过网络充分了解过 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.通过网络了解过部分信息 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            C.没有通过网络了解信息 </li>
+                        
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            9.您事先还通过哪些途径对旅游相关情况进行了解过</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.亲朋好友  </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.专业咨询 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            C. 传统媒体宣传</li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            D.没有事先了解过</li>
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+                <!-- E panel-body -->
+                <div id="panel2" class="panel-body js_answer" style="display: none;">
+                    <form action="#" method="POST">
+                    <a name="result" href="javascript:void(0)"></a>
+                    <div class="form-group avatar text-center">
+                        <label for="" class="sr-only">
+                            前言</label>
+                        <a href="javascript:void(0)" class="img-circle" name="1"><span style="float: left;
+                            text-align: center; width: 100%; padding-top: 18px;">
+                            <img src="ks.jpg"></span> </a>
+                    </div>
+                    <dl>
+                        <dd>
+                            10.出行前，您认为能从互联网上获取所需要的全部信息吗</dd></dl>
+                    <ul class="list-group  js_group">
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            A.完全可以 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            B.可以获得大部分信息</li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="0" />
+                            C.只能获得小部分信息 </li>
+                        <li class="list-group-item" onclick="return toggle(this);">
+                            <input name="g" type="radio" class="" value="5" />
+                            D.不可以 </li>
+                    </ul>
+                    </form>
+                </div>
+                <!-- E panel-body -->
+    
+                
+                
+            <div id="panel2" class="panel-body js_answer" data-id="0" style="display: none;">
+                <hr>
+                <dl>
+                    <dt>再次感谢您的参与</dt>
+                    <dd>
+                        <p>
+                            </p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="1" style="display: none;">
+                <h1 class="bold text-danger">
+                     一般般，连五十分都没拿到</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                            您一定不是本地人吧，不过您已获得新疆话金种子称号！（分享到朋友圈可见具体分数）</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="2" style="display: none;">
+                <h1 class="bold text-danger">
+                       差一点点就60分了撒~</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                              你的新疆话已经相当不错了，虽然没有及格，不过没关系、抽个空泡个新疆妞/新疆帅哥，相信你会拿走你该得的满分！（分享到朋友圈可见具体分数）</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="3" style="display: none;">
+                <h1 class="bold text-danger">
+                     不错不错，70分</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                              您已获得新疆羊肉串形象代言人特权！抽空去爬爬红山切，相信你的新疆口语会更上一层楼的哟~（分享到朋友圈可见具体分数）</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="4" style="display: none;">
+                <h1 class="bold text-danger">
+                    80分，离成功已经很近！</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                             哈哈哈，是不是被难倒了，没有拿到满分也正常，谁让我们的八级测试那么难呢~努力练习你的新疆话，成为南阳的骄傲吧！（分享到朋友圈可见具体分数）</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="5" style="display: none;">
+                <h1 class="bold text-danger">
+                      90分，正宗新疆人！</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                             噗~~竟然拿到了这么高的分数，看来你是有备而来！如此流利的新疆话，令人钦佩！（分享到朋友圈可见具体分数）</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <div id="panel3" class="panel-body js_result" data-id="6" style="display: none;">
+                <h1 class="bold text-danger">
+                    哇塞，满分！</h1>
+                <hr>
+                <dl>
+                    <dt>详细分析:</dt>
+                    <dd>
+                        <p>
+                             新疆话、是你居家旅行，升官发财，发家致富，打情骂俏之必备利器！本次八级测试，你成功过关！速度分享到朋友圈晒下你的得分吧！</p>
+                    </dd>
+                </dl>
+                <div class="buttons">
+                    <a href="javascript:void(0)" class="btn btn-lg btn-success" style="width: 100%" onclick="$(&#39;#mcover&#39;).show()">
+                        邀请小伙伴一起玩</a>
+                </div>
+            </div>
+            <!-- E bd -->
+        </div>
+        <!-- E container -->
+<input type="hidden" name="totalsc" id="totalsc" value="0"  />
+<script type="text/javascript">
+var total = 20;
+var scoreArr = new Array(parseInt(total));
+    scoreArr[0] = new Array(2);
+    scoreArr[0]['min'] = 0;
+    scoreArr[0]['max'] = 100;
+    scoreArr[1] = new Array(2);
+    scoreArr[1]['min'] = 5;
+    scoreArr[1]['max'] = 30;
+    scoreArr[2] = new Array(2);
+    scoreArr[2]['min'] = 31;
+    scoreArr[2]['max'] = 65;
+    scoreArr[3] = new Array(2);
+    scoreArr[3]['min'] = 66;
+    scoreArr[3]['max'] = 80;
+    scoreArr[4] = new Array(2);
+    scoreArr[4]['min'] = 81;
+    scoreArr[4]['max'] = 95;
+    scoreArr[5] = new Array(2);
+    scoreArr[5]['min'] = 96;
+    scoreArr[5]['max'] = 100;
+var tScore = 0;
+var dataForWeixin={
+    img:    "",
+    url:    "",
+    title:  "我的选择是 ",
+    desc:   "网络信息对旅游者决策的影响",
+};
+function next(t){
+    $("div#bd > div.panel-body").hide();
+    $("div.js_answer").eq(t).show();
+    $("div.js_answer").eq(t).children("input").attr("checked","");       
+    gotoTop();
+}
+function result(t){
+    share_pop("open",10000);
+    $("div#bd > div.panel-body").hide();
+    for(var i = 0; i < parseInt(total);i++){
+        if(parseInt(t) >= parseInt(scoreArr[i]['min']) && parseInt(t) <= parseInt(scoreArr[i]['max'])){
+            $("div.js_result").eq(i).show();
+			$("div.js_result").eq(i).find(".resultscore").eq(0).html($("#totalsc").val());
+			gotoTop();
+		}
+        else
+            continue;
+    }
+}
+function toggle(t){
+    $(t).children("input").attr("checked","checked");
+    $("li.list-group-item").removeClass('active')
+    var score = $(t).children("input:checked").val();
+    tScore  = parseInt(tScore) + parseInt(score);
+	$("#totalsc").val(tScore);
+    $(t).addClass('active');
+    var t = $("div.js_answer").index($(t).parents("div.js_answer")) + 1;
+    if(t == total){
+        result(tScore);
+    }else{
+        setTimeout(function(){next(t);},500);
+    }
+}
+function gotoTop(){
+    $("body,html").animate({scrollTop:($("#header").offset().top + $("#header").height())}, 1000);
+}
+</script>
+</div>
+<script type="text/javascript">
+$(function() {
+	$("input[name='g']").change(function(){
+		$("li.list-group-item").removeClass('active')
+		$(this).parent("li.list-group-item").addClass('active');
+	});
+	$('nav#menu-left').mmenu({ dragOpen: true });
+	$("nav#menu-right").show();
+	var $menu = $('nav#menu-right');
+	$menu.mmenu({
+		position: 'right',
+		classes: 'mm-light',
+		dragOpen: true
+	});
+	$("div.btn-group > a").click(function() {
+		$("div.btn-group > a").removeClass("current");
+		$(this).addClass("current");
+		$("ul.js-right").hide();
+		$("ul.js-right").eq($("div.btn-group > a").index(this)).show();
+	});
+});
+</script>
+
+<div id="mcover" onclick="document.getElementById('mcover').style.display='';" style="display: none;"><img src="guide.png"></div>
+<script type="text/javascript">
+function report(link, action_type){
+	var parse_link = parseUrl(link);
+	if(parse_link == null){ return; }
+	var query_obj = parseParams( parse_link['query_str'] );
+	query_obj['action_type'] = action_type;
+	query_obj['action_link'] = 'http://www.mycodes.net';
+	var report_url = 'report.php?' + jQuery.param( query_obj );
+	$.ajax({ url: report_url, type: 'POST', timeout: 2000})
+}
+function share_scene(link, scene_type){
+	var parse_link = parseUrl(link);
+	if(parse_link == null){	  return link;	}
+	var query_obj = parseParams( parse_link['query_str'] );
+	query_obj['scene'] = scene_type;
+	var share_url = 'http://' + parse_link['domain'] + parse_link['path'] + '?' + jQuery.param( query_obj ) + (parse_link['sharp'] ? parse_link['sharp'] : '');
+	return share_url;
+}
+function recordscore(t){
+	var record_url = 'record.php?t=' + t;
+	$.ajax({ url: record_url, type: 'POST', timeout: 2000})
+}
+$(function(){
+    var onBridgeReady=function(){
+        WeixinJSBridge.on('menu:share:appmessage', function(argv){
+            WeixinJSBridge.invoke('sendAppMessage',{
+                "appid":        '',
+                "img_url":      dataForWeixin.img,
+                "img_width":    "120",
+                "img_height":   "120",
+                "link":             dataForWeixin.url,
+                "desc":             dataForWeixin.desc,
+                "title":            dataForWeixin.title+$("#totalsc").val()+" 分 你能超过我吗？ "+dataForWeixin.desc
+            }, function(res){
+				report(dataForWeixin.url, 1);
+				//recordscore($("#totalsc").val());
+                shareSuccess();
+            });
+        });
+        WeixinJSBridge.on('menu:share:timeline', function(argv){
+			report(dataForWeixin.url, 2);
+			//recordscore($("#totalsc").val());
+            WeixinJSBridge.invoke('shareTimeline',{
+            "img_url":dataForWeixin.img,
+            "img_width":"120",
+            "img_height":"120",
+            "link":dataForWeixin.url,
+            "desc":dataForWeixin.desc,
+            "title":dataForWeixin.title+$("#totalsc").val()+" 分 你能超过我吗？ "+dataForWeixin.desc
+            }, function(res){
+                shareSuccess();
+            });
+        });
+        WeixinJSBridge.on('menu:share:weibo', function(argv){
+            WeixinJSBridge.invoke('shareWeibo',{
+            "content":dataForWeixin.title+$("#totalsc").val()+" 分 你能超过我吗？ "+dataForWeixin.desc+' '+dataForWeixin.url,
+            "url":dataForWeixin.url
+            }, function(res){
+				report(dataForWeixin.url, 3);
+				//recordscore($("#totalsc").val());
+                shareSuccess();
+            });
+        });
+    };
+    if(document.addEventListener){
+        document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+            WeixinJSBridge.call('showOptionMenu');
+        });
+        document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+    }else if(document.attachEvent){
+        document.attachEvent('WeixinJSBridgeReady'   , onBridgeReady);
+        document.attachEvent('onWeixinJSBridgeReady' , onBridgeReady);
+    }
+})();
+</script>
+
+    <div id="pop_success" class="text-center" style="display: none;">
+        <div class="bd text-center">
+            <p style="line-height: 110px;">
+                分享成功</p>
+        </div>
+        <!-- E bd -->
+    </div>
+    <!-- E pop_success -->
+    <div id="popup-1" class="tip" style="display: none;">
+        <div>
+            <a id="close1" href="javascript:void(0)"><i class="glyphicon glyphicon-remove"></i>
+            </a>
+            <div class="row text-center">
+                <a href="http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd" class="btn btn-danger col-sm-12 btn-lg" id="weixinfollowlink">微信关注：新疆微电影</a>
+            </div>
+            <!-- E discuss -->
+        </div>
+    </div>
+    <!-- E tip -->
+    <div id="follow" class="well" style="display: none;">
+        <a id="close1" href="javascript:void(0)">X</a>
+        <div class="row text-center">
+            <a href="http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd" class="btn btn-danger col-sm-12 btn-lg" id="weixinfollowlink1">微信关注：新疆微电影</a>
+        </div>
+        <!-- E row -->
+    </div>
+
     <script>
-        var dataset=[1,2,3,4,5];
-        var dataset1;
-        d3.csv("TestSet.csv", function(data){
-            dataset1=data;
+        $(function() {
+            $("a#close1").click(function() {
+                share_pop("close", 0);
+            });
+			if(navigator.userAgent.indexOf("MicroMessenger") == -1){
+				$("#weixinfollowlink").attr("href","http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd");
+				$("#weixinfollowlink1").attr("href","http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd");
+				$("#weixinfollowlink2").attr("href","http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd");
+				$("#weixinfollowlink3").attr("href","http://mp.weixin.qq.com/s?__biz=MjM5ODMzMjk5Nw==&mid=200442232&idx=1&sn=bb981cf0ec10bc9bf28f24179744f511&from=singlemessage&isappinstalled=0#rd");
+			}
+        });
+        function shareSuccess() {
+            share_pop("open", 0);
+            $("div#pop_success").show().delay(1500).fadeOut("slow");
         }
-              )
-        d3.select("body").selectAll("p")
-.data(dataset)
-.enter()
-.append("p")
-.text(function(d) { return d; });
+        function share_pop(t, time) {
+            if (t == "open") {
+                setTimeout('showShare()', 15000);
+            } else {
+                $('#follow').hide();
+            }
+        }
+        function showShare() {
+            $('#follow').show();
+        }
     </script>
+
+   
+    <!-- E copy -->
+
 </body>
 </html>
